@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\BuilderPattern建造者模式.js"
+      "program": "${workspaceFolder}\\16StatePattern狀態模式.js"
     }
   ]
 }
