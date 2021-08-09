@@ -1,70 +1,61 @@
-class Player { //抽象類別
+class Pokemon { //抽象類別
   constructor(name) {
     this.name = name
   }
   attack() {} //進攻
-  defense() {} //防守
+  defense() {} //防禦
 }
 
-class Forwards extends Player {
+class GrassPokemon extends Pokemon { //草系神奇寶貝
   attack() {
-    console.log('前鋒 ' + this.name + ' 進攻')
+    console.log(this.name + ' 使出飛葉快刀')
   }
   defense() {
-    console.log('前鋒 ' + this.name + ' 防守')
+    console.log(this.name + ' 防禦')
   }
 }
 
-class Center extends Player {
+class FirePokemon extends Pokemon { //火系神奇寶貝
   attack() {
-    console.log('中鋒 ' + this.name + ' 進攻')
+    console.log(this.name + ' 使出噴射火焰')
   }
   defense() {
-    console.log('中鋒 ' + this.name + ' 防守')
+    console.log(this.name + ' 防禦')
   }
 }
 
-class Guards extends Player {
-  attack() {
-    console.log('後衛 ' + this.name + ' 進攻')
-  }
-  defense() {
-    console.log('後衛 ' + this.name + ' 防守')
-  }
-}
-
-class ForeignCenter { //外籍中鋒
+class UnderstandGrassPokemon { //聽不懂人類語言的草系神奇寶貝
   constructor(name) {
     this.name = name
   }
-  attackChinese() {
-    console.log('外籍中鋒 ' + this.name + ' 進攻')
-  }
-  defenseChinese() {
-    console.log('外籍中鋒 ' + this.name + ' 防守')
-  }
-}
-
-class Translator extends Player { //翻譯，轉接器，轉接Player和外籍球員
-  translationToCenter() { //翻譯給外國人中鋒
-    this.centerChinese = new ForeignCenter(this.name)
-  }
   attack() {
-    this.centerChinese.attackChinese()
+    console.log(this.name + ' 使出藤蔓')
   }
   defense() {
-    this.centerChinese.defenseChinese()
+    console.log(+ this.name + ' 防禦')
+  }
+}
+
+class Meowth extends Pokemon { //喵喵，轉接器，轉接Pokemon和聽不懂人類語言的神奇寶貝
+  translationToGrassPokemon() { //翻譯給草系神奇寶貝
+    this.grassPokemon = new UnderstandGrassPokemon(this.name)
+  }
+  attack() {
+    this.grassPokemon.attack()
+  }
+  defense() {
+    this.grassPokemon.defense()
   }
 }
 
 
 
-let forwardsA = new Forwards('A君')
-forwardsA.attack()
+let bulbasaur = new GrassPokemon('妙蛙種子')
+bulbasaur.attack()
 
-let centerB = new Center('B君')
-centerB.defense()
+let charizard = new FirePokemon('噴火龍')
+charizard.defense()
 
-let translator = new Translator('外國人C君')
-translator.translationToCenter() //翻譯給外國人中鋒
-translator.attack()
+let meowth = new Meowth('妙蛙花')
+meowth.translationToGrassPokemon() //翻譯給草系神奇寶貝
+meowth.attack() //叫草系神起寶貝攻擊
