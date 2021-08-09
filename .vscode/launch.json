@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\17Adapter轉接器模式.js"
+      "program": "${workspaceFolder}\\19Composite組合模式.js"
     }
   ]
 }
