@@ -56,6 +56,6 @@ bulbasaur.attack()
 let charizard = new FirePokemon('噴火龍')
 charizard.defense()
 
-let meowth = new Meowth('妙蛙花')
+let meowthTranslation = new Meowth('妙蛙花') //喵喵翻譯
 meowth.translationToGrassPokemon() //翻譯給草系神奇寶貝
 meowth.attack() //叫草系神起寶貝攻擊
