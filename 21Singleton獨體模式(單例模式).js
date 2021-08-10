@@ -22,7 +22,7 @@
 class Singleton {
   constructor(name) {
     this.name = name
-    if (Singleton.getInstance === undefined) {
+    if (Singleton.getInstance === undefined) { //判斷有沒有建立過Singleton的prototype "getInstance"
       Singleton.getInstance = this
     }
     return Singleton.getInstance
