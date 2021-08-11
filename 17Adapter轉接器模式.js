@@ -24,7 +24,7 @@ class FirePokemon extends Pokemon { //火系神奇寶貝
   }
 }
 
-class UnderstandGrassPokemon { //聽不懂人類語言的草系神奇寶貝
+class UnderstandGrassPokemon { //聽不懂人類語言的草系神奇寶貝，轉接器
   constructor(name) {
     this.name = name
   }
